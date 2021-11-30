@@ -53,7 +53,7 @@ struct ContentView: View {
             
             
             //Output
-            Text("Area")
+            Text("Celcius")
                     .bold()
             
             Text("\(String(format:"%.1f",temperature))")
