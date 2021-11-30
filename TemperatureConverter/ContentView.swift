@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var temperature: Double = 10.0
+    @State var celsius: Double = 10.0
     
     //MARK: Computed properties
-    var area: Double {
-        return temperature * 1.8 + 32
+    var fahrenheit: Double {
+        return celsius * 1.8 + 32
     }
     
     var body: some View {
@@ -28,14 +28,14 @@ struct ContentView: View {
                 //Show the selected temperature value
                 HStack {
                     Spacer()
-                    Text("\(String(format: "%.1f", temperature))")
+                    Text("\(String(format: "%.1f", celsius))")
                         .font(.title2)
                         .bold()
                     Spacer()
                 }
                 //The syntax of $ says to use the property radius, and BIND it to this control
                 //This value means when the control changes, the property's value changes
-               Slider(value: $temperature,
+               Slider(value: $celsius,
                        in: 0.0...100.0,
                        label: {
                             Text("temperature")
@@ -53,10 +53,10 @@ struct ContentView: View {
             
             
             //Output
-            Text("Celcius")
+            Text("Fahrenheit")
                     .bold()
             
-            Text("\(String(format:"%.1f",temperature))")
+            Text("\(String(format:"%.1f",fahrenheit))")
             
             Spacer()
             
